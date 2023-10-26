@@ -13,3 +13,19 @@ def titulo_h2():
 @app.route("/parrafo")
 def parrafo():
     return "<p>Hola, soy un parrafo</p>"
+
+@app.route("/get-lista")
+def lista():
+    GetLista = ["administrador de sistemas", "secretaria", "gerente", "vendedor", "auxiliar de compra"]
+    return(GetLista)
+
+@app.route("/get-diccionario")
+def diccionario():
+    GetDiccionario = {
+        "id":"36",
+        "nombres":"Justo",
+        "apellidos": "Rojas",
+        "edad": "64",
+        "fechanac": "1960-06-01",
+    }
+    return(GetDiccionario)
