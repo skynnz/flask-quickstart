@@ -1,4 +1,5 @@
 from flask import Flask
+from markupsafe import escape
 
 app = Flask(__name__)
 
@@ -29,3 +30,11 @@ def diccionario():
         "fechanac": "1960-06-01",
     }
     return(GetDiccionario)
+
+@app.route("/persona-cedula/<cedula>")
+def var_persona(cedula):
+    d = {
+        "persona":"Claudia",
+        "cedula": cedula,
+    }
+    return f'La cedula es, {escape(str(d))}'  
