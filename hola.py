@@ -37,4 +37,16 @@ def var_persona(cedula):
         "persona":"Claudia",
         "cedula": cedula,
     }
-    return f'La cedula es, {escape(str(d))}'  
+    return f'La cedula es, {escape(str(d))}'
+
+@app.route("/verificar-edad/<int:edad>")
+def verificar_edad(edad):
+    if edad >= 18:
+        return "La persona es mayor de edad."
+    else:
+        return "La persona es menor de edad."
+
+""" Crear un endpoint que reciba 2 parámetros y muestre su resultado al navegador """
+@app.route("/parametros/<int:parametro1>/<int:parametro2>")
+def verif_param(parametro1, parametro2):
+    return f'Los parametros son {parametro1, parametro2}'
