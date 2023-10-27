@@ -1,5 +1,6 @@
-from flask import Flask
+from flask import Flask, render_template
 from markupsafe import escape
+from markupsafe import Markup
 
 app = Flask(__name__)
 
@@ -50,3 +51,8 @@ def verificar_edad(edad):
 @app.route("/parametros/<parametro1>/<parametro2>")
 def verif_param(parametro1, parametro2):
     return f'Los parametros son {parametro1, parametro2}'
+
+"plantillas con jinja"
+@app.route('/index/<name>')
+def index(name=None):
+    return render_template('index.html', name=name)
