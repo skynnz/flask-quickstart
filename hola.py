@@ -47,6 +47,6 @@ def verificar_edad(edad):
         return "La persona es menor de edad."
 
 """ Crear un endpoint que reciba 2 parámetros y muestre su resultado al navegador """
-@app.route("/parametros/<int:parametro1>/<int:parametro2>")
+@app.route("/parametros/<parametro1>/<parametro2>")
 def verif_param(parametro1, parametro2):
     return f'Los parametros son {parametro1, parametro2}'
